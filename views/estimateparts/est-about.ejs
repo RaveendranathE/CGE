@@ -1,0 +1,45 @@
+<!-- P2-7 Naga Sravanthi Modali && Venkata Naga Kamal Nadh Meduri -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCvttv9XkAC3GXZrN953LoWlSvjtxrJLn4&sensor=false&callback=initMap"></script>
+Type: <%=estimate.type%><br/>
+Client: <%=estimate.client%><br/>
+Address: <%=estimate.address%><br/>
+City: <%=estimate.city%><br/>
+State: <%=estimate.state%><br/>
+Zipcode: <%=estimate.zipcode%><br/>
+Latitude: <%=estimate.latitude%><br/>
+Longitude: <%=estimate.longitude%><br/>
+<div class="col col-md-12">           
+<div style="overflow:hidden;height:300px;width:400px;">
+<div class="gmap_canvas" style="height:300px;width:400px;">
+<style>.gmap_canvas img{max-width:none!important;background:none!
+
+important}</style>
+<a class="google-map-code" href="http://premium-wordpress-themes.org" 
+
+id="get-map-data">premium-wordpress-themes.org</a>
+</div>
+</div>
+ <script type="text/javascript"> 
+ function init_map() {
+var tempMap = document.getElementsByClassName("gmap_canvas");
+console.log("tempmap was: " + tempMap);
+ for(var x =0;x<tempMap.length;x++){
+      var myOptions = {
+      scrollwheel: false,
+       zoom: 17,
+        center: new google.maps.LatLng(<%=estimate.latitude%>, <%=estimate.longitude%>),
+        mapTypeId: google.maps.MapTypeId.SATELLITE };
+     map = new google.maps.Map(tempMap[x], myOptions);
+     marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(<%=estimate.latitude%>, <%=estimate.longitude%>) 
+
+});
+     infowindow = new google.maps.InfoWindow({ content: "<b><%=estimate.address%>"  }); 
+     google.maps.event.addListener(marker, "click", function () { 
+    //  infowindow.open(map, marker); 
+     }); 
+     infowindow.open(map, marker); 
+ } 
+     } google.maps.event.addDomListener(window, 'load', init_map);
+     
+</script>
+ </div>

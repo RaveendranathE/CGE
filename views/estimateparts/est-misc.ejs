@@ -1,0 +1,26 @@
+<h3>Miscellaneous</h3>
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var total = 0; for (var i = 0; i < estimate.miscellaneousEntries.length; i++) { e=estimate.miscellaneousEntries[i]; %>
+      <tr>
+        <td>
+          <%=  e.miscdescription %>
+        </td>
+        <td>
+          <%=  e.cost %>
+        </td> 
+      </tr>
+      <% total += e.cost; %>
+        <% } %>
+  </tbody>
+</table>
+<h4>
+  $
+  <%=  total %>
+</h4><br/>

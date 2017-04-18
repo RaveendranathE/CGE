@@ -1,0 +1,37 @@
+<!-- P2-10 Jordan Nazario -->
+<br/>
+<br/>
+<h2>Details for Prospect</h2>
+<br/>
+<br/>
+<p><b>Prospect # 
+	<%=  prospect._id %>
+</b></p>
+<p>
+	Name: <%=  prospect.customerName %>
+</p>
+<p>
+	Address: <%=  prospect.address %> 
+</p>
+<p>
+	City: <%=  prospect.city %> 
+</p>
+<p>
+	State: <%=  prospect.state %> 
+</p>
+<p>
+	Zip: <%=  prospect.zip %> 
+</p>
+<p>
+	Square Feet:<%=  prospect.sqft %> 
+</p>
+<p>
+	Customer Type: <%=  prospect.customerType %> 
+</p>
+<p>
+	Contact Name: <%=  prospect.contact %> 
+</p>
+<br/>
+<form method="get" action="/prospect">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

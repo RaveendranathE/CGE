@@ -1,0 +1,79 @@
+[
+  {
+    "_id": 1,
+    "client": "Acme Hall Flooring Job",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
+    "areas": [
+      {
+        "_id": 1,
+        "description": "A1",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      },
+      {
+        "_id": 2,
+        "description": "A2",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      }
+    ],
+    "isDeleted":"false",
+    "flooring": {
+      "floorSystemType": "Decorative Epoxy",
+      "usesUrethane": true,
+      "urethaneProductSelection": 4,
+      "urethaneCoverageSqFt": 107,
+      "usesEpoxy": true,
+      "epoxyProductSelection": 6,
+      "epoxyCoverageSqFt": 117
+    },
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Quartz",
+      "aggregateMaterialSelection": 2,
+      "coverageSqFt": 100
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 1,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 1,
+        "roomCost": 80
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "truck",
+        "numberOfVehicles": 1,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "pickups",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "miscdescription": "Misc 1",
+        "cost": 150
+      },
+      {
+        "miscdescription": "Misc 2",
+        "cost": 200
+      }
+    ],
+    "comment": "First estimate!",
+    "margin": 0.60
+  }
+]

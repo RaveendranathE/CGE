@@ -1,0 +1,69 @@
+<!--Dev Team-p4-6
+Jyothsna Pala
+Bhavishya Arelli 
+-->
+<br/>
+
+<br/>
+
+<h2>Create a new waterproofing Basecoat product</h2>
+<p>There are currently
+	<%= waterproofingBasecoats.query.length %> waterproofing Basecoat. </p>
+<br/>
+<% 
+maxID=0; 
+for (var i=0; i<waterproofingBasecoats.query.length; i++) {
+    if(waterproofingBasecoats.query[i]._id > maxID) {
+        maxID=waterproofingBasecoats.query[i]._id;
+        }
+}
+maxDisplayorder=0; 
+for (var i=0; i<waterproofingBasecoats.query.length; i++) {
+    if(waterproofingBasecoats.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=waterproofingBasecoats.query[i].displayorder;
+        }
+}
+%>
+	<p>The largest ID is
+		<%= maxID %>. </p>
+	<p>The largest display order is
+		<%= maxDisplayorder %>. </p><br/>
+	<div class="content">
+		<div>
+			<form name="waterproofingPrimer" method="POST" action="/waterproofingBasecoat/save" + _id.value>
+
+				<div class="form-group" id=frm>
+					<label for="_id">ID</label>
+					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required >
+				</div>
+
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" id="name" name="name" value="Name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="unit">Unit</label>
+					<input type="text" class="form-control" id="unit" name="unit" value="gal" required>
+				</div>
+
+				<div class="form-group">
+					<label for="price">Price</label>
+					<input type="text" class="form-control" id="price" name="price" value="30" min = "40" max="100" required>
+				</div>
+
+				<div class="form-group">
+					<label for="displayorder">Display Order</label>
+					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>					
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="Post new entry" class="btn btn-primary" />
+				</div>
+			</form>
+			<br/>
+			<form method="get" action="/waterproofingBasecoat">
+				<input type="submit" value="Return to list" class="btn btn-caution" />
+			</form>
+		</div>
+	</div>

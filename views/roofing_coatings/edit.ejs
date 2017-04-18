@@ -1,0 +1,46 @@
+<!--Dev Team P3-6
+Neeraja Garigipati s528801
+Vaishnavi Kalvakota s528803
+-->
+<br/>
+<br/>
+<h2>Edit roofing coating</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/roofingCoating/save/<%= roofingCoating._id %>">
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= roofingCoating._id %>" required disabled>
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="name" value="<%= roofingCoating.name %>" required>
+			</div>
+			<div class="form-group">
+				<label for="unit">Unit</label>
+				<input type="text" class="form-control" id="unit" name="unit" value="<%= roofingCoating.unit %>" required>
+			</div>
+			<div class="form-group">
+				<label for="price">Price</label>
+				<input type="number" class="form-control" id="price" name="price" value="<%= roofingCoating.price %>" required>
+			</div>
+			<div class="form-group">
+				<label for="displayorder">Display Order</label>
+				<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= roofingCoating.displayorder %>"
+					required>
+			</div>
+
+			<div class="form-group">
+				<label for="displayorder">Status</label>
+				<input type="text" class="form-control" id="status" name="status" value="<%= roofingCoating.isactive %>"
+					required>
+			</div>
+
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		<br/>
+		<form method="get" action="/roofingCoating">
+			<input type="submit" value="Return to list" class="btn btn-caution" />
+		</form>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<!--p2-6
+Sushmitha Madireddy, Nikil Reddy Kankanala-->
+<hr>
+<h2>Flooring Materials</h2>
+<hr>
+<div class="form-group">
+  <label for="floorSystemType">Floor System Type</label>
+  <div class="funkyradio"  >
+    <div class="funkyradio-primary">
+      <input type="checkbox" name="floorSystemType" id="Epoxy" <%= (estimate.flooring.floorSystemType =='Epoxy') ? 'checked' : ' ' %> />
+      <label for="Epoxy">Epoxy</label>
+    </div>
+    <div class="funkyradio-success">
+      <input type="checkbox" name="floorSystemType" id="Decorative Epoxy" <%= (estimate.flooring.floorSystemType =='Decorative Epoxy') ? 'checked' : ' ' %> />
+      <label for="Decorative Epoxy">Decorative Epoxy</label>
+    </div>
+    <div class="funkyradio-warning">
+      <input type="checkbox" name="floorSystemType" id="Urethane" <%= (estimate.flooring.floorSystemType =='Urethane') ? 'checked' : ' ' %> />
+      <label for="Urethane">Urethane</label>
+    </div>
+  </div>
+</div>
+  <% include ../estimateparts/fg-flooring1 %>
+  <% include ../estimateparts/fg-flooring2 %>

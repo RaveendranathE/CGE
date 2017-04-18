@@ -1,0 +1,40 @@
+<!-- P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri -->
+<!-- temporary update so that some mileage rate always appears. Please get the correct one (talk with Kenny and Wendy)--> 
+<h3>Mileage</h3>
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Number of Vehicles</th>
+      <th>Miles/Drive</th>
+      <th>$/Mile</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead> 
+  <tbody>
+    <% var total = 0; for (var i = 0; i < estimate.mileageEntries.length; i++) { e =estimate.mileageEntries[i]; rate= e.dollarsPerMile > 0 ? e.dollarsPerMile : 0.50 %>
+      <tr>
+        <td>
+          <%=  e.description %>
+        </td>
+        <td>
+          <%=  e.numberOfVehicles %>
+        </td>
+        <td>
+          <%=  e.milesPerDrive %>
+        </td>
+        <td>
+          <%=  rate %>
+        </td>
+        <td>
+          <%=  e.numberOfVehicles * e.milesPerDrive * rate  %>
+        </td>
+      </tr>
+      <% total += (e.numberOfVehicles * e.milesPerDrive * rate); %>
+        <% } %>
+  </tbody>
+</table>
+<h4>
+  $
+  <%=  total %>
+</h4><br/>

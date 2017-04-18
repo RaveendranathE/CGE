@@ -1,0 +1,55 @@
+<!--Dev Team P3-6
+Neeraja Garigipati s528801
+Vaishnavi Kalvakota s528803
+-->
+<% console.log(roofingCoatings.query); %>
+	<div class="container">
+		<h2>Roofing coatings</h2>
+		<p>There are
+			<%= roofingCoatings.query.length %> roofing coatings. <br/>
+				<a href="roofingCoating/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span>Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < roofingCoatings.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  roofingCoatings.query[i]._id %>
+						</td>
+						<td>
+							<%=  roofingCoatings.query[i].name %>
+						</td>
+						<td>
+							<%=  roofingCoatings.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  roofingCoatings.query[i].price %>
+						</td>
+						<td>
+							<%=  roofingCoatings.query[i].unit %>
+						</td>
+						<td id="stat">
+						<%=  roofingCoatings.query[i].isactive?"Active":"Inactive"  %>
+						</td>
+						<td>
+							<a href="roofingCoating/active/<%=  roofingCoatings.query[i]._id %>/<%=  roofingCoatings.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingCoatings.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingCoatings.query[i].isactive?"Deactivate":"Activate" %></button></a>			
+							<a href="roofingCoating/details/<%= roofingCoatings.query[i]._id %>" type="button" class="btn btn-info">   Details </a> 
+							<a href="roofingCoating/edit/<%=    roofingCoatings.query[i]._id %>" type="button" class="btn btn-warning">  Edit </a>
+							<a href="roofingCoating/delete/<%=  roofingCoatings.query[i]._id %>" type="button" class="btn btn-danger" >	 Delete </a> 							
+						</td>
+						
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>

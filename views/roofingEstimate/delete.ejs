@@ -1,0 +1,25 @@
+<!--P3-10
+Joel Beckley, Veera Kishon Kumar Mucherla-->
+<br/>
+<br/>
+<h2>Confirm deletion of roofing estimate</h2>
+<br/>
+<br/> ID:
+<%=  estimate._id %><br>
+	<% include ../estimateparts/est-about %>
+		<% include ../estimateparts/est-footage %>
+				<% include ../estimateparts/est-roofing %>
+						<% include ../estimateparts/est-aggregate %>
+							<% include ../estimateparts/est-labor %>
+								<% include ../estimateparts/est-mileage %>
+									<% include ../estimateparts/est-misc %>
+										<% include ../estimateparts/est-result %><br/>
+
+											<form method="get" action="/roofingEstimate">
+												<input type="submit" value="Return to list" class="btn btn-caution" />
+											</form>
+
+											<br/>
+											<form method="POST" action="/roofingEstimate/delete/<%= estimate._id %>">
+												<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+											</form>

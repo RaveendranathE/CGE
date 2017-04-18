@@ -1,0 +1,33 @@
+<!-- Dev Team ID (P4-9) Varsha Basawapuram (S528735), Srinithya Kamareddy (S528740) -->
+<div class="form-group">
+  <label for="usesTopcoat">Uses Topcoat?</label>
+  <input type="checkbox" onchange="topcoatcheckchange()" class="form-control" id="usesTopcoat" name="usesTopcoat" <%= estimate.waterproofing.usesTopcoat ? 'checked' : ' ' %> />
+</div>
+<div id="SelectTopCoat">
+
+<div class="form-group">
+  <label for="topcoatSelection">Topcoat Selection</label>
+  <select class="form-control" name="topcoatSelection" >
+    <%  var data = waterproofingTopcoats.query; for( var i=0; i<data.length; i++){ %>
+       <option value="<%= data[i]._id %>"<%= (estimate.waterproofing.topcoatSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group">
+  <label for="topcoatCoverageSqFt">Topcoat Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="topcoatCoverageSqFt" name="topcoatCoverageSqFt" value="<%= estimate.waterproofing.topcoatCoverageSqFt || 100%>" min=100 max=150 >
+</div>
+</div>
+
+<script>
+function topcoatcheckchange()  {
+ if (document.getElementById('usesTopcoat').checked) {
+  // alert('is checked');
+   document.getElementById('SelectTopCoat').style.display = "block";
+ }
+ else {
+  // alert("now it's not checked");
+   document.getElementById('SelectTopCoat').style.display = "none";
+ }
+}
+</script>

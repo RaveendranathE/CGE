@@ -1,0 +1,17 @@
+<br/>
+<br/>
+<h2>Details for <%=  estimatePartFootage.name %> square foot</h2>
+<br/>
+<br/>
+<p>Item	<%=  estimatePartFootage._id %>: <%=  estimatePartFootage.name %>
+</p>
+<p>
+	Total square feet: <%=  estimatePartFootage.length*estimatePartFootage.width %>
+</p>
+<p>
+	Length is <%=  estimatePartFootage.length %> and width is <%=  estimatePartFootage.width %>
+</p>
+<br/>
+<form method="get" action="/estimatePartFootage">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

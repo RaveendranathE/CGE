@@ -1,0 +1,50 @@
+<!-- P3-9
+ Sandeep Mulakala, David Schmitt -->
+<% console.log(aggregateMaterials.query); %>
+	<div class="container">
+		<h2>Aggregate materials</h2>
+		<p>There are
+			<%= aggregateMaterials.query.length %> aggregate materials. <br/>
+				<a href="aggregate/create" class="btn btn-info" role="button">Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < aggregateMaterials.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  aggregateMaterials.query[i]._id %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].name %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].price %>
+						</td>
+						<td>
+							<%=  aggregateMaterials.query[i].unit %>
+						</td>
+						<td id="stat"><%=  aggregateMaterials.query[i].isactive?"Active":"Inactive"  %></td>
+						<td>
+				<a href="aggregate/active/<%=  count%>/<%=  aggregateMaterials.query[i].isactive?'false':'true' %>"><button type="button" class="btn <%=aggregateMaterials.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  aggregateMaterials.query[i].isactive?"Deactivate":"Activate" %></button></a>
+							<a href="aggregate/details/<%= aggregateMaterials.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
+							<a href="aggregate/edit/<%=    aggregateMaterials.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a>
+							<a href="aggregate/delete/<%=  aggregateMaterials.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
+						</td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>

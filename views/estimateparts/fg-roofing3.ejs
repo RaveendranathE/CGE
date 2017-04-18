@@ -1,0 +1,31 @@
+<!--DEVTEAM: P3-5
+Dasarsh Manikonda , Mathew horner -->
+<div class="form-group">
+  <input type="checkbox" id="usesPrimer" name="usesPrimer" onchange="checkChange()" <%= estimate.roofing.usesPrimer ? 'checked' : ' ' %> />
+<b>Uses Primer?</b>
+</div>
+<div class="form-group" id="primerDiv1">
+  <label for="primerSelection">Primer Selection</label>
+  <select class="form-control" name="primerSelection">
+    <%  var data = roofingPrimers.query; for( var i=0; i<data.length; i++){ %>
+       <option value="<%= data[i]._id %>"<%= (estimate.roofing.primerSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group" id="primerDiv2">
+  <label for="primerCoverageSqFt">Primer Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.roofing.primerCoverageSqFt ? estimate.roofing.primerCoverageSqFt : '300' %>" min=0 max=10000 >
+</div>
+<script>
+	function checkChange() {
+		if (document.getElementById('usesPrimer').checked) {
+			document.getElementById('primerDiv1').style.display = '';
+			document.getElementById('primerDiv2').style.display = '';
+		} else {
+			document.getElementById('primerDiv1').style.display = 'none';
+			document.getElementById('primerDiv2').style.display = 'none';
+		}
+	}
+	
+	checkChange();
+</script>

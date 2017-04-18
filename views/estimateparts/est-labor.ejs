@@ -1,0 +1,47 @@
+<!-- P3-3 Devin Miller & Unnathi VallapuReddy -->
+<h3>Labor</h3>
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Desc</th>
+      <th>Ct</th>
+      <th>Hr/Pers</th>
+      <th>$/Hr</th>
+      <th>Night/Pers</th>
+      <th>Rm/Nightt</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var total = 0; for (var i = 0; i < estimate.laborEntries.length; i++) { e =estimate.laborEntries[i]; %>
+      <tr>
+        <td>
+          <%=  e.description %>
+        </td>
+        <td>
+          <%=  e.count %>
+        </td>
+        <td>
+          <%=  e.hoursPerPerson %>
+        </td>
+        <td>
+          <%=  e.dollarsPerHour %>
+        </td>
+        <td>
+          <%=  e.nightsPerPerson %>
+        </td>
+        <td>
+          <%=  e.roomCost %>
+        </td>
+        <td>
+          <%=  e.count * e.hoursPerPerson* e.dollarsPerHour + (e.count*e.nightsPerPerson*e.roomCost) %>
+        </td>
+      </tr>
+      <% total += e.count * e.hoursPerPerson* e.dollarsPerHour + (e.count*e.nightsPerPerson*e.roomCost); %>
+        <% } %>
+  </tbody>
+</table>
+<h4>
+  $
+  <%=  total %>
+</h4><br/>

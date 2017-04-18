@@ -1,0 +1,32 @@
+<!--P3-12 Ben Wolff and Nagnath Prabhu-->
+<div class="form-group">
+  <input type="checkbox" id="usesBasecoat" name="usesBasecoat" onchange="checkchange()" <%= estimate.roofing.usesBasecoat ? 'checked' : ' ' %> />
+  <b>Uses Basecoat?</b>
+</div>
+<div id = "disp" style="display:none;">
+<div class="form-group" >
+  <label for="basecoatSelection" >Roofing Basecoat Selection</label>
+  <select class="form-control"  id="basecoatSelection" name="basecoatSelection">
+    <%  var data = roofingBasecoats.query; for( var i=0; i<data.length; i++){ %>
+      <option value="<%= data[i]._id %>"<%= (estimate.roofing.basecoatSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group">
+  <label for="basecoatCoverageSqFt">Basecoat Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="basecoatCoverageSqFt" name="basecoatCoverageSqFt" value="<%= estimate.roofing.basecoatCoverageSqFt %>" min=0 max=200 >
+</div>
+</div>
+<script type="text/javascript">
+function checkchange()  {
+   var input = document.getElementById('usesBasecoat');
+if(input.checked) {
+  document.getElementById('disp').style.display = "block";        
+    
+} 
+else {
+   
+    document.getElementById('disp').style.display = "none";
+}
+}
+  </script>

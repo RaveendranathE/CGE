@@ -1,0 +1,23 @@
+<!-- P4-12 Kenneth Mott and Wendy Eloe -->
+<br/>
+<br/>
+<h2>Mileage rate details</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  mileageRate._id %>
+</p>
+<p>
+	<%=  mileageRate.startDate %>
+</p>
+<p>
+	<%=  mileageRate.dollarsPerMile %> 
+</p>
+<br/>
+<form method="get" action="/mileageRate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/mileageRate/delete/<%= mileageRate._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>

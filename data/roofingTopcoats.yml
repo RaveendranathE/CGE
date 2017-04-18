@@ -1,0 +1,58 @@
+#P3-8
+#Swaroop gembali, Tarunkumar Potlapalli
+---
+- name: 7441 - urethane
+  _id: 1
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 10
+  price: 44.00
+  status: active
+  isactive: true
+- name: 7490 - aliphatic urethane
+  _id: 2
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 20
+  price: 52.25
+  status: active
+  isactive: true
+- name: 70613 - permathane II
+  _id: 3
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 30
+  price: 46.20
+  status: active
+  isactive: true
+- name: 70630 - urethane
+  _id: 4
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 40
+  price: 41.80
+  status: active
+  isactive: true
+- name: 7860 - silicone 
+  _id: 5
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 50
+  price: 33.25
+  status: active
+  isactive: true
+- name: 7251 - acrylic
+  _id: 6
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 60
+  price: 19.40
+  status: active
+  isactive: true
+#7441 - urethane                 $44.00/gal
+#7490 - aliphatic urethane       $52.25/gal
+#70613 - permathane II           $46.20/gal
+#70630 - urethane                $41.80/gal
+#7860 - silicone                 $33.25/gal
+#7251 - acrylic                  $19.40/gal
+

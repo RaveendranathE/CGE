@@ -1,0 +1,32 @@
+<!-- Dev Team ID (P4-4) Karthik Laddipeerla(S528805),Naveen Kumar Kolla(s528743)-->
+
+<div class="form-group">
+  <label for="usesBasecoat">Uses Basecoat?</label>
+  <input type="checkbox" class="form-control" id="usesBasecoat" onchange="checkbasecoat()" name="usesBasecoat" <%= estimate.waterproofing.usesBasecoat ? 'checked' : ' ' %> />
+</div>
+<div id="BasecoatProductSelection">
+<div class="form-group">
+  <label for="basecoatSelection">waterproofing Basecoat Selection</label>
+  <select class="form-control" name="basecoatSelection" >
+    <%  var data = waterproofingBasecoats.query; for( var i=0; i<data.length; i++){ %>
+      <option value="<%= data[i]._id %>"<%= (estimate.waterproofing.basecoatSelection == data[i]._id)?'selected':'' %> > <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group">
+  <label for="basecoatCoverageSqFt">Basecoat Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="basecoatCoverageSqFt" name="basecoatCoverageSqFt" value="<%= estimate.roofing.basecoatCoverageSqFt %>" min=85 max=150 >
+</div>
+</div>
+
+<script>
+function checkbasecoat()  {
+ if (document.getElementById('usesBasecoat').checked) {
+   document.getElementById('BasecoatProductSelection').style.display = "block";
+   }
+ else {
+  
+   document.getElementById('BasecoatProductSelection').style.display = "none";
+   }
+}
+</script>

@@ -1,0 +1,79 @@
+<!-- P2-10 Jordan Nazario -->
+
+<br/>
+<h2>Create a new prospect</h2>
+<p>There are currently
+	<%= prospects.query.length %> prospects. </p>
+<br/>
+<% 
+maxID=0; 
+for (let i=0; i<prospects.query.length; i++) {
+    if(prospects.query[i]._id > maxID) {
+        maxID=prospects.query[i]._id;
+        }
+}
+
+
+%>
+	<p>The largest ID is
+		<%= maxID %>. </p>
+
+	<div class="content">
+		<div>
+			<form name="prospect" method="POST" action="/prospect/save" + _id.value>
+
+				<div class="form-group" id=frm>
+					<label for="_id">ID</label>
+					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+				</div>
+
+				<div class="form-group">
+					<label for="customerName">Customer Name</label>
+					<input type="text" class="form-control" id="customerName" name="customerName" value="" required>
+				</div>
+
+				<div class="form-group">
+					<label for="address">Address</label>
+					<input type="text" class="form-control" id="address" name="address" value="" required>
+				</div>
+
+                <div class="form-group">
+					<label for="city">City</label>
+					<input type="text" class="form-control" id="city" name="city" value="" required>
+				</div>
+
+                <div class="form-group">
+					<label for="state">State (2 letter code)</label>
+					<input type="text" class="form-control" id="state" name="state" value="" required>
+				</div>
+
+                <div class="form-group">
+					<label for="zip">Zip Code</label>
+					<input type="text" class="form-control" id="zip" name="zip" value="" required>
+				</div>
+
+                <div class="form-group">
+					<label for="sqft">Square Feet</label>
+					<input type="number" class="form-control" id="sqft" name="sqft" value="" required>
+				</div>
+
+                <div class="form-group">
+					<label for="customerType">Customer Type</label>
+					<input type="text" class="form-control" id="customerType" name="customerType" value="" required>
+				</div>
+
+                <div class="form-group">
+					<label for="contact">Contact Name</label>
+					<input type="text" class="form-control" id="contact" name="contact" value="" required>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="Post new entry" class="btn btn-primary" />
+				</div>
+			</form>
+			<br/>
+			<form method="get" action="/prospect">
+				<input type="submit" value="Return to list" class="btn btn-caution" />
+			</form>
+		</div>
+	</div>

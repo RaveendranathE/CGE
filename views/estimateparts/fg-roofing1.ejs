@@ -1,0 +1,33 @@
+<!--P3-2
+Alekhya Devi Manne , Elizabeth Billings
+roofing coating-->
+<div class="form-group">
+  <label for="coatingType">Coating Type</label>
+  <div class="funkyradio">
+    <div class="funkyradio-primary">
+      <input type="checkbox" name="Urethane" id="Urethane" <%= (estimate.roofing.coatingType =='Urethane') ? 'checked' : ' ' %> />
+      <label for="Urethane">Urethane</label>
+    </div>
+    <div class="funkyradio-success">
+      <input type="checkbox" name="Silicone" id="Silicone" <%= (estimate.roofing.coatingType =='Silicone') ? 'checked' : ' ' %> />
+      <label for="Silicone">Silicone</label>
+    </div>
+    <div class="funkyradio-warning">
+      <input type="checkbox" name="Acrylic" id="Acrylic" <%= (estimate.roofing.coatingType =='Acrylic') ? 'checked' : ' ' %> />
+      <label for="Acrylic">Acrylic</label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="coatingSelection">Coating Selection</label>
+  <select class="form-control" name="coatingSelection">
+    <%  var data = roofingCoatings.query; for( var i=0; i<data.length; i++){ %>
+      <option value="<%= data[i]._id %>"<%= (estimate.roofing.coatingSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group">
+  <label for="coatingCoverageSqFt">Coating Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="coatingCoverageSqFt" name="coatingCoverageSqFt" value="<%= estimate.roofing.coatingCoverageSqFt %>" min=0 max=200 >
+</div>
+

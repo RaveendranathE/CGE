@@ -1,0 +1,56 @@
+# P3-9 
+# Sandeep Mulakala, David Schmitt
+---
+- name: 7992 - 16/30 mesh sand
+  _id: 1
+  aggregateType: Sand
+  defaultCoverageSqFt: 200
+  unit: 100lb bag
+  displayorder: 10
+  price: 18.80
+  status: active
+  isactive: true
+- name: 86301 - quartz
+  _id: 2
+  aggregateType: Quartz
+  defaultCoverageSqFt: 100
+  unit: 50lb bag
+  displayorder: 20
+  price: 22.15
+  status: active
+  isactive: true
+- name: 86302 - uv stable quartz
+  _id: 3
+  type: Quartz
+  unit: 50lb bag
+  displayorder: 30
+  price: 29.00
+  status: active
+  isactive: true
+
+- name: 86500 - glass beads
+  _id: 4
+  type: Glass Beads
+  unit: 50lb bag
+  displayorder: 40
+  price: 77.65
+  status: active
+  isactive: true
+  
+- name: 86500 - glass beads
+  _id: 5
+  type: Glass Beads
+  unit: 50lb bag
+  displayorder: 50
+  price: 77.65
+  status: active
+  isactive: true
+  
+- name: 86500 - glass beads
+  _id: 6
+  type: Glass Beads
+  unit: 50lb bag
+  displayorder: 60
+  price: 77.65
+  status: active
+  isactive: true

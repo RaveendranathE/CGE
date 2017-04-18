@@ -1,0 +1,43 @@
+<div class="form-group" >
+  <label for="usesUrethane">Uses Urethane?</label>
+  <input type="checkbox" class="form-control" id="usesUrethane" onchange="checkchange1()" name="usesUrethane" <%= estimate.flooring.usesUrethane ? 'checked' : ' ' %> />
+</div>
+
+<div class="form-group" id="form1">
+  <label for="urethaneProductSelection">Urethane Product Selection</label>
+  <select class="form-control" name="urethaneProductSelection" id="urethaneProductSelection">
+      <option selected disabled>Select</option>
+    <%  var data = flooringCoatings.query; for( var i=0; i<data.length; i++){ 
+      if (data[i].name.toLowerCase().includes("urethane")){
+      %>
+      if (data[i].name.toLowerCase().includes("urethane")){
+      %>
+
+    <option value="<%= data[i]._id %>"<%= (estimate.flooring.urethaneProductSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } }%>
+</select>
+</div>
+<div class="form-group" id="form2">
+  <label for="urethaneCoverageSqFt">Urethane Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="urethaneCoverageSqFt" onkeyup="chk_range()" name="urethaneCoverageSqFt" value="<%= estimate.flooring.urethaneCoverageSqFt || 80 %>"  min=80  max=200 >
+</div>
+
+<script>
+
+
+
+function checkchange1()  {
+ if (document.getElementById('usesUrethane').checked) {
+
+  document.getElementById('form1').style.display = "block";
+   document.getElementById('form2').style.display = "block";
+    //document.getElementById('urethaneCoverageSqFt').value(80);
+ }
+ else {
+   //alert("now it's not checked");
+   document.getElementById('form1').style.display = "none";
+   document.getElementById('form2').style.display = "none";
+ }
+}
+
+</script>

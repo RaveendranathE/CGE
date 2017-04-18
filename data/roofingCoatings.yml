@@ -1,0 +1,32 @@
+# P3-6
+# Neeraja Garigipati s528801
+# Vaishnavi Kalvakota s528803
+---
+- _id: 1
+  name: Urethane
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 10
+  price: 44.20
+  status: active
+  isactive: true
+- _id: 2
+  name: Silicone
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 20
+  price: 41.80
+  status: active
+  isactive: true
+- _id: 3
+  name: Acrylic
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 30
+  price: 33.25
+  status: active
+  isactive: true
+#The roofing product options are:
+#Urethane - $44.20/gal
+#Silicone - $41.80/gal
+#Acrylic - $33.25/gal

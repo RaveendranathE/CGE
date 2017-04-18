@@ -1,0 +1,22 @@
+[
+    {
+        "_id": 1,
+        "_type": "roofingPrimer",
+        "name": "7760/7761 - solvent based epoxy",
+        "unit": "gal",
+        "displayorder": 10,
+        "price": 33.75,
+        "status": "active",
+        "isactive": true
+    },
+    {
+        "_id": 2,
+        "_type": "roofingPrimer",
+        "name": "7780/7781 - water based epoxy",
+        "unit": "gal",
+        "displayorder": 20,
+        "price": 38.50,
+        "status": "active",
+        "isactive": true
+    }
+]

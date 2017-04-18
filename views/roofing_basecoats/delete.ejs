@@ -1,0 +1,28 @@
+<!––devteam ID (P3-7) Amarendar Reddy Reddygari (s528760), Connor Besancenez (s519984) are going to work on Roofing basecoats.––>
+<br/>
+<br/>
+<h2>Confirm deletion of roofing basecoat</h2>
+<br/>
+<br/>
+<p>Item
+	<%=  roofingBasecoat._id %>
+</p>
+<p>
+	<%=  roofingBasecoat.name %>
+</p>
+<p>
+	<%=  roofingBasecoat.price %> per
+		<%=  roofingBasecoat.unit %>
+</p>
+<p>
+	Status: <%=  roofingBasecoat.status %>
+</p>
+
+<br/>
+<form method="get" action="/roofingBasecoat">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
+<br/>
+<form method="POST" action="/roofingBasecoat/delete/<%= roofingBasecoat._id %>">
+	<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+</form>

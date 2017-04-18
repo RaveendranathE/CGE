@@ -1,0 +1,50 @@
+<br>
+<% console.log(estimatePartFootages.query); %>
+<div class="container">
+ <h2>All entries</h2>
+
+<p>There are  <%= estimatePartFootages.query.length %> entries. <br/>
+<br>
+<a href="estimatePartFootage/create"><button type="button" class="btn btn-primary">Add a new one</button></a></p>
+
+<table class="table" border="1">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Length</th>
+			<th>Width</th>
+			<th>SqFt</th>
+			<th>Display Order</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+    <tbody>
+	<% var total = 0; for (var i = 0; i < estimatePartFootages.query.length; i++) { %>
+	<tr>
+		<td><%=  estimatePartFootages.query[i]._id %></td>
+		<td><%=  estimatePartFootages.query[i].name %></td>
+		<td><%=  estimatePartFootages.query[i].length %></td>
+		<td><%=  estimatePartFootages.query[i].width %></td>
+		<td><%=  estimatePartFootages.query[i].length*estimatePartFootages.query[i].width %></td>
+		<td><%=  estimatePartFootages.query[i].displayorder %></td>
+		<td>
+			<a href="estimatePartFootage/delete/<%=  estimatePartFootages.query[i]._id %>"> <button type="button" class="btn btn-danger">Delete</button> </a> 
+			<a href="estimatePartFootage/details/<%= estimatePartFootages.query[i]._id %>"> <button type="button" class="btn btn-info">Details</button> </a> 
+			<a href="estimatePartFootage/edit/<%=    estimatePartFootages.query[i]._id %>"> <button type="button" class="btn btn-warning">Edit</button> </a>
+		</td>
+		<% total = total+estimatePartFootages.query[i].length*estimatePartFootages.query[i].width; %>
+	</tr>
+	<% } %>
+	<tr>
+		<td></td>
+		<td><b>Calculated total sqft</b></td>
+		<td></td>
+		<td></td>
+		<td><b><%= total %></td>
+		<td></td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
+</div>

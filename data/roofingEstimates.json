@@ -1,0 +1,98 @@
+[
+  {
+    "_id": 1,
+    "client": "Utility Roof Job",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
+    "IsDeleted":"false",
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 7,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 8,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {},
+    "roofing": {
+      "roofType": "Mod Bit",
+      "processType": "Polyurethane Foam and Coatings",
+      "coatingType": "Silicone",
+      "coatingSelection": 2,
+      "coatingCoverageSqFt": 102,
+      "usesBasecoat": true,
+      "basecoatSelection": 2,
+      "basecoatCoverageSqFt": 117,
+      "usesPrimer": true,
+      "primerSelection": 2,
+      "primerCoverageSqFt": 97,
+      "usesTopcoat": true,
+      "topcoatSelection": 6,
+      "topcoatCoverageSqFt": 107
+    },
+    "waterproofing": {},
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 2,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 3,
+        "roomCost": 80
+      },
+      {
+        "description": "Asst",
+        "count": 3,
+        "hoursPerPerson": 24,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 3,
+        "roomCost": 120
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "Big Truck",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 177,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "Sm Truck",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 177,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "Equip",
+        "cost": 100
+      },
+      {
+        "description": "Stuff",
+        "cost": 200
+      },
+      {
+        "description": "More",
+        "cost": 50
+      }
+    ],
+    "comment": "Great customer!",
+    "margin": 0.50
+  }
+]

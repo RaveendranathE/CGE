@@ -1,0 +1,32 @@
+
+<!--DEVTEAM :P3-4 Anil seshu kumar Akula , Reshma Shaik -->
+<div class="form-group">
+  <input type="checkbox" id="usesTopcoat" name="usesTopcoat" onchange="topdiff()" <%= estimate.roofing.usesTopcoat ? 'checked' : ' ' %> />
+  <label for="usesTopcoat">Uses Topcoat?</label>
+</div>
+<div id = "top" style="display:none;">
+<div class="form-group">
+<label for="topcoatSelection">Topcoat Selection</label>
+  <select class="form-control" name="topcoatSelection">
+    <%  var data = roofingTopcoats.query; for( var i=0; i<data.length; i++){ %>
+       <option value="<%= data[i]._id %>"<%= (estimate.roofing.topcoatSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group">
+  <label for="topcoatCoverageSqFt">Topcoat Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="topcoatCoverageSqFt" name="topcoatCoverageSqFt" value="<%= estimate.roofing.topcoatCoverageSqFt %>" min=0 max=200 >
+</div>
+</div>
+<script type="text/javascript">
+function topdiff()  {
+   var input = document.getElementById('usesTopcoat');
+if(input.checked) {
+  document.getElementById('top').style.display = "block";        
+} 
+else {
+   
+    document.getElementById('top').style.display = "none";
+}
+}
+  </script>

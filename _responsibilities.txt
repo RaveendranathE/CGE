@@ -1,0 +1,71 @@
+
+ Responsiblity for specific files
+ 
+ NOTE: 
+ 
+ Each file has been assigned to 
+ a single Section. 
+ 
+ Exactly one team in each section 
+ will be responsible for that file
+ and making sure that file 
+ always compiles and runs.
+ 
+ Doesn't have to be perfect 
+ but it does have to work.
+ 
+ "Don't break the build."
+ One of the great 
+ laws of teamwork. 
+ As long as your files compile,
+ no one minds. :)
+ 
+Additional _responsibilities.txt 
+are provided in each folder.
+
+================================
+Folders
+================================
+
+/data 
+seed data loaded each time the application starts
+
+/models 
+schema descriptions of each type of item stored
+
+/views 
+dyanmically-generated web pages
+
+/controllers 
+handle client requests
+respond with 
+   - views, 
+   - JSON data, or 
+   - by executing commands (e.g. delete all estimates) :)
+
+
+
+================================
+Section 02
+================================
+package.json
+assets/
+app.js
+================================
+Section 03
+================================
+LICENSE.md
+================================
+Section 04
+================================
+README.md
+================================
+
+
+
+
+
+
+
+
+

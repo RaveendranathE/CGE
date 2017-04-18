@@ -1,0 +1,63 @@
+<!-- P3-11 
+Nikhil Muthyala, Sahu Chintha -->
+<hr>
+<h2>Aggregate Costs</h2>
+<hr>
+<div class="form-group">
+    <input type="checkbox" onclick="ShowHideDiv(this)" id="usesAggregate" name="usesAggregate" <%= estimate.aggregate.isUsed ? 'checked' : ' ' %> />
+    <label for="usesAggregate">Uses Aggregate?</label>
+   </div>
+<script type="text/javascript">
+    function ShowHideDiv(usesAggregate) {
+        var AggregateTypeDiv = document.getElementById("AggregateTypeId");
+        var AggregateMaterialDiv = document.getElementById("AggregateMaterialId");
+        var AggregateCoverageDiv = document.getElementById("AggregateCoverageId");
+        if(usesAggregate.checked){      
+            AggregateTypeDiv.style.display = "block";        
+            AggregateMaterialDiv.style.display = "block";   
+            AggregateCoverageDiv.style.display = "block";  
+        } else {
+            AggregateTypeDiv.style.display = "none";        
+            AggregateMaterialDiv.style.display = "none";
+            AggregateCoverageDiv.style.display = "none";  
+            document.getElementById("Sand").checked = false;
+            document.getElementById("Quartz").checked = false;
+            document.getElementById("Flake").checked = false;
+            document.getElementById("Glass").checked = false;
+        }    
+    }
+</script>
+<div class="form-group" id="AggregateTypeId" name="AggregateTypeId" style="display:none;">
+    <label for="aggregateTypeSelection">Aggregate Type</label>
+    <div class="funkyradio" name="aggregateTypeSelection">
+        <div class="funkyradio-primary">
+            <input type="radio" name="aggregateTypeSelection" id="Sand" <%= estimate.aggregateTypeSelection=='Sand' ? checked : ' ' %>" />
+            <label for="Sand">Sand</label>
+        </div>
+        <div class="funkyradio-success">
+            <input type="radio" name="aggregateTypeSelection" id="Quartz" <%= estimate.aggregateTypeSelection=='Quartz' ? checked : ' ' %>" />
+            <label for="Quartz">Quartz</label>
+        </div>
+        <div class="funkyradio-warning">
+            <input type="radio" name="aggregateTypeSelection" id="Flake" <%= estimate.aggregateTypeSelection=='Flake' ? checked : ' ' %>" />
+            <label for="Flake">Flake</label>
+        </div>
+        <div class="funkyradio-danger">
+            <input type="radio" name="aggregateTypeSelection" id="Glass" <%= estimate.aggregateTypeSelection=='Glass' ? checked : ' ' %>" />
+            <label for="Glass">Glass Beads</label>
+        </div>
+    </div>
+</div>
+<div class="form-group" id="AggregateMaterialId" style="display: none;">
+    <label for="aggregateMaterialSelection">Aggregate Material</label>
+    <select class="form-control" name="aggregateMaterialSelection" value="<%= estimate.aggregate.aggregateMaterialSelection %>">
+    <%  var data = aggregateMaterials.query; for( var i=0; i<data.length; i++){ %>
+    <option value="<%= data[i]._id %>"> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+
+<div class="form-group" id="AggregateCoverageId"   style="display:none;">
+  <label for="coverageSqFt">Aggregate Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="coverageSqFt"  name="coverageSqFt" value="<%= estimate.aggregate.coverageSqFt || 80 %>"  min=80  max=200 >
+</div>

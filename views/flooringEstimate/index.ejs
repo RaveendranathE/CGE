@@ -1,0 +1,30 @@
+<!--Dev Team P2-3
+Sreeja Reddy Challa
+Koushik Lakkaraju
+-->
+<h2>Recent flooring estimates</h2>
+<p>There are
+  <%= flooringEstimates.query.length %> flooring estimates. <br/>
+    <a href="/flooringEstimate/create" class="btn btn-primary">Add a new one</a></p>
+<% for (var i = 0; i < flooringEstimates.query.length; i++) { estimate = flooringEstimates.query[i]; %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%=estimate.client%> - <%=estimate.address%> (<%=estimate.city%>, <%=estimate.state%>)</div>
+    <div class="text-muted pull-right"></div>
+    <div class="panel-body">
+      ID:
+      <%=  estimate._id %><br>
+                 <% include ../estimateparts/est-footage %>
+            <% include ../estimateparts/est-flooring %>
+                <% include ../estimateparts/est-aggregate %>
+                    <% include ../estimateparts/est-labor %>
+                      <% include ../estimateparts/est-mileage %>
+                        <% include ../estimateparts/est-misc %>
+                          <% include ../estimateparts/est-comment %>
+                            <% include ../estimateparts/est-result %> <br/>
+
+                              <a href="/flooringEstimate/delete/<%= estimate._id  %>" class="btn btn-danger"> Delete </a>
+                              <a href="/flooringEstimate/details/<%= estimate._id %>" class="btn btn-info"> Details </a>
+                              <a href="/flooringEstimate/edit/<%= estimate._id %>" class="btn btn-warning">  Edit </a>
+    </div>
+  </div>
+  <% } %>

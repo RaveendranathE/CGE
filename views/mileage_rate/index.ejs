@@ -1,0 +1,39 @@
+<!-- P4-12 Kenneth Mott and Wendy Eloe -->
+<% console.log(mileageRates.query); %>
+	<div class="container">
+		<h2>Mileage Rates</h2>
+
+		<p>There are
+			<%= mileageRates.query.length %> mileage rates. <br/>
+				<a href="mileageRate/create">Add a new one.</a></p><br/>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Start Date</th>
+					<th>Dollars per Mile ($USD)</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < mileageRates.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  mileageRates.query[i]._id %>
+						</td>
+						<td>
+							<%= new Date(mileageRates.query[i].startDate).toISOString().substring(0,10) %>
+						</td>
+						<td>
+							<%=  mileageRates.query[i].dollarsPerMile %>
+						</td>
+						<td>
+							<a href="mileageRate/delete/<%=  mileageRates.query[i]._id %>"class="btn btn-danger"> Delete </a> 
+							<a href="mileageRate/details/<%= mileageRates.query[i]._id %>"class="btn btn-info"> Details </a> 
+							<a href="mileageRate/edit/<%=    mileageRates.query[i]._id %>"class="btn btn-warning">  Edit </a>
+						</td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>

@@ -1,0 +1,11 @@
+{
+	"data" : [
+        {
+	        "email" : "admin@cge.com",
+	        "password" : "lalaland",
+	        "profile" : {
+	                "name" : "Admin"
+	        }
+    	}
+    ]
+}

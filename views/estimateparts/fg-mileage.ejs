@@ -1,0 +1,22 @@
+<!-- P4-7 | Aditya Srimat Tirumala Pallerlamudi, Lavanya Kalluri -->
+<hr>
+<h2>Mileage Costs</h2>
+<hr>
+<div id="mileageCosts">
+<% for(var i=0; i<estimate.mileageEntries.length; i++) { e = estimate.mileageEntries[i];  %>
+   <% include fg-mileage-entry.ejs %>
+<% } %>
+</div>
+<input type = "button" class = "btn btn-primary" value="Add" onclick="addMileage()">
+<br/>
+
+<script> 
+var count = 0;
+addMileage = function(){
+
+    var HTMLBlock = '<div class="col-xs-4"><div class="form-group"><label for="description">Description</label><input type="text" class="form-control" id="description" name="mileagedescription" value="<%= e.description %>" placeholder="Description" required></div></div><div class="col-xs-2"><div class="form-group"><label for="numberOfVehicles">Count</label><input type="number" step="any" class="form-control" id="numberOfVehicles" name="numberOfVehicles" value="<%= e.numberOfVehicles %>" min=0 max=10 value=2 required></div></div><div class="col-xs-2"><div class="form-group"><label for="milesPerDrive">Mi/drive</label><input type="number" step="any" class="form-control" id="milesPerDrive" name="milesPerDrive" value="<%= e.milesPerDrive %>" min=0 max=1000 value=100 required></div></div><div class="col-xs-2"><div class="form-group"><label for="dollarsPerMile">$/mile</label><input type="number" step="any" class="form-control" id="dollarsPerMile" name="dollarsPerMile" value="<%= e.dollarsPerMile %>" min=0.00 max=10.00 value=0.50 required></div></div><div class="col-xs-2"><div class="form-group"><label for="Total">Total </label><input type="number" step="any" class="form-control" id="Total" name="Total" value="<%= e.numberOfVehicles * e.milesPerDrive *e.dollarsPerMile %>" placeholder="Total" required></div></div>'
+    $("#mileageCosts").append(HTMLBlock);
+    count++;
+}
+
+</script>

@@ -1,0 +1,150 @@
+<!-- P2-10 Jordan Nazario && Hunter Turley -->
+
+<% console.log(prospects.query); %>
+  <div class="container">
+    <h2>Prospects</h2>
+
+    <p>There are
+      <%= prospects.query.length %> prospects. <br/>
+        <a href="prospect/create"class="btn btn-info" role="button">Add a new prospect</a></p>
+        <input style="margin-bottom: 10px;" class= "form-control" type="text" id="prospectSearch" name="prospectSearch" onkeyup="nameSearch()" placeholder="Search for a customer">
+    <table id ="prospectTable"class="table" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th >State</th>
+          <th>Zip</th>
+          <th>Sq.Ft</th>
+          <th>Type</th>
+          <th>Contact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < prospects.query.length; i++) { %>
+          <tr>
+            <td>
+              <%=  prospects.query[i]._id %>
+            </td>
+            <td>
+              <%= prospects.query[i].customerName%>
+            </td>
+            <td>
+              <%=  prospects.query[i].address %>
+            </td>
+            <td>
+              <%= prospects.query[i].city %>
+            </td>
+            <td>
+              <%= prospects.query[i].state %>
+            </td>
+            <td>
+              <%= prospects.query[i].zip %>
+            </td>
+            <td>
+              <%= prospects.query[i].sqft %>
+            </td>
+            <td>
+              <%= prospects.query[i].customerType %>
+            </td>
+            <td>
+              <%= prospects.query[i].contact %>
+            </td>
+            <td>
+              <a href="prospect/delete/<%=  prospects.query[i]._id %>" class="btn btn-danger"> Delete </a>
+              <a href="prospect/details/<%= prospects.query[i]._id %>" class="btn btn-info"> Details </a>
+              <a href="prospect/edit/<%=    prospects.query[i]._id %>" class="btn btn-warning">  Edit </a>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    //Search functionality for prospect table (based on customer name). Taken from w3schools
+function nameSearch() {
+  // Declare variables
+  var input,table, tr, td, i;
+  input = document.getElementById("prospectSearch");
+  input = input.value.toUpperCase();
+  table = document.getElementById("prospectTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(input) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+  <!--
+    This function was previously included as a way to sort each column of the table. Taken from w3 schools
+
+
+  <script>
+                     function sortTable(n) {
+                       var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                       table = document.getElementById("prospectTable");
+                       switching = true;
+                       //Set the sorting direction to ascending:
+                       dir = "asc";
+                       /*Make a loop that will continue until
+                       no switching has been done:*/
+                       while (switching) {
+                         //start by saying: no switching is done:
+                         switching = false;
+                         rows = table.getElementsByTagName("TR");
+                         /*Loop through all table rows (except the
+                         first, which contains table headers):*/
+                         for (i = 1; i < (rows.length - 1); i++) {
+                           //start by saying there should be no switching:
+                           shouldSwitch = false;
+                           /*Get the two elements you want to compare,
+                           one from current row and one from the next:*/
+                           x = rows[i].getElementsByTagName("TD")[n];
+                           y = rows[i + 1].getElementsByTagName("TD")[n];
+                           /*check if the two rows should switch place,
+                           based on the direction, asc or desc:*/
+                           if (dir == "asc") {
+                             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                               //if so, mark as a switch and break the loop:
+                               shouldSwitch = true;
+                               break;
+                             }
+                           } else if (dir == "desc") {
+                             if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                               //if so, mark as a switch and break the loop:
+                               shouldSwitch = true;
+                               break;
+                             }
+                           }
+                         }
+                         if (shouldSwitch) {
+                           /*If a switch has been marked, make the switch
+                           and mark that a switch has been done:*/
+                           rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                           switching = true;
+                           //Each time a switch is done, increase this count by 1:
+                           switchcount++;
+                         } else {
+                           /*If no switching has been done AND the direction is "asc",
+                           set the direction to "desc" and run the while loop again.*/
+                           if (switchcount == 0 && dir == "asc") {
+                             dir = "desc";
+                             switching = true;
+                           }
+                         }
+                       }
+                     }
+
+  </script> -->

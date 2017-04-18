@@ -1,0 +1,43 @@
+<!––devteam ID (P3-7) Amarendar Reddy Reddygari (s528760), Connor Besancenez (s519984) are going to work on Roofing basecoats.––>
+
+
+<% console.log(roofingBasecoats.query); %>
+<div class="container">
+ <h2>Roofing Basecoats</h2>
+
+<!--<p>There are  <%= roofingBasecoats.query.length %> roofing basecoats. <br/>-->
+<a href="roofingBasecoat/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+<table class="table" border="1" id="t13">
+    <thead>
+      <tr>
+      <th>ID</th>
+        <th>Name</th>
+        <th>Display Order</th>
+        <th>Price</th>
+        <th>Unit</th>
+        <th>Status</th>
+       <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% count=0; %>
+<% for (var i = 0; i < roofingBasecoats.query.length; i++) { %>
+         <tr> <% count++; %>
+            <td><%=  roofingBasecoats.query[i]._id %></td>
+            <td><%=  roofingBasecoats.query[i].name %></td>
+            <td><%=  roofingBasecoats.query[i].displayorder %></td>
+            <td><%=  roofingBasecoats.query[i].price %></td>   
+            <td><%=  roofingBasecoats.query[i].unit %></td>
+            <td id="stat"><%=  roofingBasecoats.query[i].isactive?"Active":"Inactive" %></td>
+            <td>
+            <a href="roofingBasecoat/active/<%=  roofingBasecoats.query[i]._id %>/<%=  roofingBasecoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingBasecoats.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingBasecoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
+            <a href="roofingBasecoat/details/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-success">  Details </button></a> 
+						<a href="roofingBasecoat/edit/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-warning"> Edit </button></a>
+            <a href="roofingBasecoat/delete/<%=  roofingBasecoats.query[i]._id %>">	<button type="button" class="btn btn-danger"> Delete </button></a> 
+						</td>
+         </tr>
+         <% } %>
+</tbody>
+</table>
+</div>

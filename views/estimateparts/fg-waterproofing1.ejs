@@ -1,0 +1,34 @@
+<!-- Dev Team ID (P4-3) Akshay Reddy Vontari(S528772),Kranthi Kumar Parelly(S528756)-->
+<div class="form-group">
+  <label for="usesPrimer">Uses Primer?</label>
+  <input type="checkbox" class="form-control" id="usesPrimer" onChange="Wp_primerCheckChange()" name="usesPrimer" <%= estimate.waterproofing.usesPrimer ? 'checked' : ' ' %> />
+</div>
+<div class="form-group" id="p1">
+  <label for="primerSelection">Primer Selection</label>
+  <select class="form-control" name="primerSelection">
+    <%  var data = waterproofingPrimers.query; 
+    for( var i=0; i<data.length; i++){ %>
+    <option value="<%= data[i]._id %>"<%= (estimate.waterproofing.primerSelection == data[i]._id)?'selected':'' %>> <%= data[i].name %> </option>
+    <% } %>
+</select>
+</div>
+<div class="form-group" id="p2">
+  <label for="primerCoverageSqFt">Primer Coverage (SqFt)</label>
+  <input type="number" class="form-control" id="primerCoverageSqFt" name="primerCoverageSqFt" value="<%= estimate.waterproofing.primerCoverageSqFt || 250 %>" min=250 max=350 >
+</div>
+<script>
+function Wp_primerCheckChange()  {
+ if (document.getElementById('usesPrimer').checked) {
+   //here we need to display the elements
+   //alert('is checked');
+   document.getElementById('p1').style.display = "block";
+   document.getElementById('p2').style.display = "block";
+   }
+ else {
+   //here we need to hide the elements
+   //alert("Now it's not checked");
+   document.getElementById('p1').style.display = "none";
+   document.getElementById('p2').style.display = "none";
+   }
+}
+</script>

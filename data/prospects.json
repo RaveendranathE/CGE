@@ -1,0 +1,24 @@
+[
+    {
+        "_id":1,
+        "customerName": "Shawnee Village Shopping Center",
+        "address": "6415-6471 Quivira Rd",
+        "city": "Shawnee",
+        "state": "KS",
+        "zip": "66216",
+        "sqft": "126152",
+        "customerType": "Retail",
+        "contact": ""
+    },
+    {
+        "_id":2,
+        "customerName": "Sterling Ridge Shopping Center",
+        "address": "11201-11215 E 24 Hwy",
+        "city": "Independence",
+        "state": "MO",
+        "zip": "64054",
+        "sqft": "39940",
+        "customerType": "Retail",
+        "contact": "Paul Stone"
+    }
+]

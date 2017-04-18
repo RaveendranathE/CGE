@@ -1,0 +1,46 @@
+<!-- P4-1 Gopi Sai Krishna Lemati & Yeshwanth Rao Rangineni -->
+<hr>
+<h2>Miscellaneous Costs</h2>
+<hr>
+<%var ii=0; origcount=estimate.miscellaneousEntries.length; temp="misc"; %>
+<% for(var i=1; i<5; i++,ii++) {   %>
+<div class="col-xs-6">
+  <div class="form-group">
+    <label for="description">Miscellaneous <%=i%></label>
+    <input type="text" class="form-control" id="description" name="miscdescription<%=i%>"  placeholder="misc"  value="<%= origcount >= i ?  estimate.miscellaneousEntries[i-1].miscdescription : temp  %>">
+  </div>
+</div>
+<div class="col-xs-6">
+  <div class="form-group">
+    <label for="cost">Cost</label>
+    <input type="number" class="form-control" id= "<%= i %>" value="<%= origcount >= i ?  estimate.miscellaneousEntries[i-1].cost : 0  %>" name="cost" min=0 max=500000 >
+  </div>
+</div>
+<% } %>
+<div id="parent"></div>
+
+<input type="button" class="btn btn-primary" value="Add subtotal" id="addMiscellaneou" >
+<script>
+$(function(){
+     
+  var count = 0;
+  $('#addMiscellaneou').click(function(){
+var s=0;
+/*
+for(var j=1;j<5;j++)
+{
+alert(s);
+//s=s+(document.getElementById("j").value);
+s=s+parseInt($( "#2" ).val());
+}
+*/
+s=s+parseInt($( "#1" ).val())+parseInt($( "#2" ).val())+parseInt($( "#3" ).val())+parseInt($( "#4" ).val());
+
+document.getElementById("parent").innerHTML=s;
+    
+  });
+});
+</script>
+
+
+<br/>

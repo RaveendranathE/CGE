@@ -1,0 +1,48 @@
+<!-- P4-11 Darshan Yadav Venkatesh,Avinash vasadi. -->
+<% console.log(waterproofingTopcoats.query); %>
+  <div class="container">
+    <h2>Waterproofing topcoats</h2>
+
+    <p>There are
+      <%= waterproofingTopcoats.query.length %> waterproofing topcoat products. <br/>
+        <a href="waterproofingTopcoat/create" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one.</a></p>
+
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Display Order</th>
+          <th>Price</th>
+          <th>Unit</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i = 0; i < waterproofingTopcoats.query.length; i++) { %>
+          <tr>
+            <td>
+              <%=  waterproofingTopcoats.query[i]._id %>
+            </td>
+            <td>
+              <%=  waterproofingTopcoats.query[i].name %>
+            </td>
+            <td>
+              <%=  waterproofingTopcoats.query[i].displayorder %>
+            </td>
+            <td>
+              <%=  waterproofingTopcoats.query[i].price %>
+            </td>
+            <td>
+              <%=  waterproofingTopcoats.query[i].unit %>
+            </td>
+            <td>
+              <a href="waterproofingTopcoat/delete/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-danger"> Delete </a>
+              <a href="waterproofingTopcoat/details/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-info">  Details </a>
+              <a href="waterproofingTopcoat/edit/<%=  waterproofingTopcoats.query[i]._id %>" class="btn btn-warning">  Edit </a>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>

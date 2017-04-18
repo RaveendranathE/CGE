@@ -1,0 +1,22 @@
+<!-- P3-11 
+Nikhil Muthyala, Sahu Chintha -->
+<h3>Aggregate</h3>
+
+IsUsed: <%=  estimate.aggregate.isUsed ? 'true' : 'false' %><br/>
+Type: <%=  estimate.aggregate.aggregateTypeSelection %><br/>
+Selection: <%=  estimate.aggregate.aggregateMaterialSelection %><br/>
+Coverage: <%=  estimate.aggregate.coverageSqFt %><br/>
+
+ <% 
+ var price=0; 
+ var cost=0;
+ for (var i = 0; i < aggregateMaterials.query.length; i++) { 
+   if (aggregateMaterials.query[i]._id == estimate.aggregate.aggregateMaterialSelection){ 
+      price = aggregateMaterials.query[i].price;
+      cost = ((estimate.aggregate.isUsed ? 1 : 0) * price / estimate.aggregate.coverageSqFt).toFixed(2);
+   }
+ }
+%>
+Aggregate product unit price ($/unit): $<%= price %><br/>
+Aggregate cost ($/squarefootage): $<%= cost %><br/>
+</br>

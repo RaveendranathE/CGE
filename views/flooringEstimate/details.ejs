@@ -1,0 +1,21 @@
+<!--Dev Team P2-3
+Sreeja Reddy Challa
+Koushik Lakkaraju
+-->
+<br/>
+<br/>
+<h2>flooringEstimate details</h2>
+<br/>
+<br/> ID:
+<%=  estimate._id %><br>
+	<% include ../estimateparts/est-about %>
+		<% include ../estimateparts/est-footage %>
+			<% include ../estimateparts/est-flooring %>
+						<% include ../estimateparts/est-aggregate %>
+							<% include ../estimateparts/est-labor %>
+								<% include ../estimateparts/est-mileage %>
+									<% include ../estimateparts/est-misc %>
+										<% include ../estimateparts/est-result %> <br/>
+											<form method="get" action="/flooringEstimate">
+												<input type="submit" value="Return to list" class="btn btn-caution" />
+											</form>

@@ -1,0 +1,65 @@
+<br/>
+
+<br/>
+<h2>Create a new waterproofing primer</h2>
+<p>There are currently
+	<%= waterproofingPrimers.query.length %> waterproofing primers. </p>
+<br/>
+<% 
+maxID=0; 
+for (var i=0; i<waterproofingPrimers.query.length; i++) {
+    if(waterproofingPrimers.query[i]._id > maxID) {
+        maxID=waterproofingPrimers.query[i]._id;
+        }
+}
+maxDisplayorder=0; 
+for (var i=0; i<waterproofingPrimers.query.length; i++) {
+    if(waterproofingPrimers.query[i].displayorder > maxDisplayorder) {
+        maxDisplayorder=waterproofingPrimers.query[i].displayorder;
+        }
+}
+%>
+	<p>The largest ID is
+		<%= maxID %>. </p>
+	<p>The largest display order is
+		<%= maxDisplayorder %>. </p><br/>
+	<div class="content">
+		<div>
+			<form name="waterproofingPrimer" method="POST" action="/waterproofingPrimer/save" + _id.value>
+
+				<div class="form-group" id=frm>
+					<label for="_id">ID</label>
+					<input type="number" class="form-control" id="_id" name="_id" value="<%= maxID+1 %>" required readonly>
+				</div>
+
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" id="name" name="name" value="Name" required>
+				</div>
+
+				<div class="form-group">
+					<label for="unit">Unit</label>
+					<input type="text" class="form-control" id="unit" name="unit" value="gal" required>
+				</div>
+
+				<div class="form-group">
+					<label for="price">Price</label>
+					<input type="text" class="form-control" id="price" name="price" value="30" required>
+				</div>
+
+				<div class="form-group">
+					<label for="displayorder">Display Order</label>
+					<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= maxDisplayorder+10 %>" required>					required>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" value="Post new entry" class="btn btn-primary" />
+				</div>
+			</form>
+			<br/>
+			<form method="get" action="/waterproofingPrimer">
+				<input type="submit" value="Return to list" class="btn btn-caution" />
+			</form>
+		</div>
+	</div>
+	 <!--Team 4-8(Dara Sandeep,Dhulipalla Tilak)-->

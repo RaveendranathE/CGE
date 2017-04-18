@@ -1,0 +1,33 @@
+
+ Responsiblity for test/controllers
+
+================================
+Section 02
+================================
+about.js
+contact.js
+estimate.js
+flooringCoatings.js
+home.js
+index.js
+prospects.js
+
+================================
+Section 03
+================================
+api.js
+roofingBasecoats.js
+roofingCoatings.js
+roofingPrimers.js
+roofingTopcoats.js
+user.js
+
+================================
+Section 04
+================================
+aggregateMaterials.js
+mileageRate.js
+waterproofingBasecoats.js
+waterproofingPrimers.js
+waterproofingTopcoats.js
+================================

@@ -1,0 +1,264 @@
+[
+  {
+    "_id": 1,
+    "type": "Flooring",
+    "client": "Acme Hall Flooring Job",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {
+      "floorSystemType": "Decorative Epoxy",
+      "usesUrethane": true,
+      "urethaneProductSelection": 4,
+      "urethaneCoverageSqFt": 107,
+      "usesEpoxy": true,
+      "epoxyProductSelection": 8,
+      "epoxyCoverageSqFt": 117
+    },
+    "roofing": {},
+    "waterproofing": {},
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 1,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 1,
+        "roomCost": 80
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "truck",
+        "numberOfVehicles": 1,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "pickups",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 120,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "Misc 1",
+        "cost": 150
+      },
+      {
+        "description": "Misc 2",
+        "cost": 200
+      }
+    ],
+    "comment": "First estimate!",
+    "margin": 0.60
+  },
+  {
+    "_id": 2,
+    "type": "Roofing",
+    "client": "Utility Roof Job",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 7,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 8,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {},
+    "roofing": {
+      "roofType": "Mod Bit",
+      "processType": "Polyurethane Foam and Coatings",
+      "coatingType": "Silicone",
+      "coatingSelection": 2,
+      "coatingCoverageSqFt": 102,
+      "usesBasecoat": true,
+      "basecoatSelection": 2,
+      "basecoatCoverageSqFt": 117,
+      "usesPrimer": true,
+      "primerSelection": 2,
+      "primerCoverageSqFt": 97,
+      "usesTopcoat": true,
+      "topcoatSelection": 6,
+      "topcoatCoverageSqFt": 107
+    },
+    "waterproofing": {},
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 2,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 3,
+        "roomCost": 80
+      },
+      {
+        "description": "Asst",
+        "count": 3,
+        "hoursPerPerson": 24,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 3,
+        "roomCost": 120
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "Big Truck",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 177,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "Sm Truck",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 177,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "Equip",
+        "cost": 100
+      },
+      {
+        "description": "Stuff",
+        "cost": 200
+      },
+      {
+        "description": "More",
+        "cost": 50
+      }
+    ],
+    "comment": "Great customer!",
+    "margin": 0.50
+  },
+  {
+    "_id": 3,
+    "type": "Waterproofing",
+    "client": "Gotta B Dry",
+    "created": "2016-10-04",
+    "address": "800 University Drive",
+    "city": "Maryville",
+    "state": "MO",
+    "zipcode": 64468,
+    "latitude": 40.3519243,
+    "longitude": -94.8859978,
+    "areas": [
+      {
+        "description": "A1",
+        "widthFeet": 20,
+        "lengthFeet": 100
+      },
+      {
+        "description": "A2",
+        "widthFeet": 10,
+        "lengthFeet": 100
+      }
+    ],
+    "flooring": {},
+    "roofing": {},
+    "waterproofing": {
+      "productType": "Urethane",
+      "usesUrethane": true,
+      "urethaneSelection": 1,
+      "urethaneCoverageSqFt": 100,
+      "usesExpoxy": true,
+      "epoxySelection": 1,
+      "epoxyCoverageSqFt": 100,
+      "usesUrethanePrimer": true,
+      "urethanePrimerSelection": 1,
+      "urethanePrimerCoverageSqFt": 100,
+      "usesBasecoat": true,
+      "basecoatSelection": 1,
+      "basecoatCoverageSqFt": 100,
+      "usesPrimer": true,
+      "primerSelection": 1,
+      "primerCoverageSqFt": 100,
+      "usesTopcoat": true,
+      "topcoatSelection": 1,
+      "topcoatCoverageSqFt": 100
+    },
+    "aggregate": {
+      "isUsed": true,
+      "aggregateTypeSelection": "Sand",
+      "aggregateMaterialSelection": 1,
+      "coverageSqFt": 100
+    },
+    "laborEntries": [
+      {
+        "description": "Primary",
+        "count": 1,
+        "hoursPerPerson": 16,
+        "dollarsPerHour": 30,
+        "nightsPerPerson": 1,
+        "roomCost": 80
+      }
+    ],
+    "mileageEntries": [
+      {
+        "description": "Big",
+        "numberOfVehicles": 1,
+        "milesPerDrive": 170,
+        "dollarsPerMile": 0.50
+      },
+      {
+        "description": "Med",
+        "numberOfVehicles": 2,
+        "milesPerDrive": 177,
+        "dollarsPerMile": 0.50
+      }
+    ],
+    "miscellaneousEntries": [
+      {
+        "description": "ABC",
+        "cost": 25
+      },
+      {
+        "description": "DEF",
+        "cost": 50
+      }
+    ],
+    "comment": "Far away, but interesting work!",
+    "margin": 0.70
+  }
+]

@@ -1,0 +1,37 @@
+<!-- P3-9
+ Sandeep Mulakala, David Schmitt -->
+<br/>
+<br/>
+<h2>Edit Aggragate Materials</h2>
+<div class="content">
+	<div>
+		<form method="POST" action="/aggregate/save/<%= aggregateMaterial._id %>">
+			<div class="form-group" id=frm>
+				<label for="_id">ID</label>
+				<input type="number" class="form-control" id="_id" name="_id" value="<%= aggregateMaterial._id %>" required disabled>
+			</div>
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="name" value="<%= aggregateMaterial.name %>" required>
+			</div>
+			<div class="form-group">
+				<label for="unit">Unit</label>
+				<input type="text" class="form-control" id="unit" name="unit" value="<%= aggregateMaterial.unit %>" required>
+			</div>
+			<div class="form-group">
+				<label for="price">Price</label>
+				<input type="number" class="form-control" id="price" name="price" value="<%= aggregateMaterial.price %>" required>
+			</div>
+			<div class="form-group">
+				<label for="displayorder">Display Order</label>
+				<input type="number" class="form-control" id="displayorder" name="displayorder" value="<%= aggregateMaterial.displayorder %>"
+					required>
+			</div>
+			<input type="submit" value="Save" class="btn btn-primary" />
+		</form>
+		<br/>
+		<form method="get" action="/aggregate">
+			<input type="submit" value="Return to list" class="btn btn-caution" />
+		</form>
+	</div>
+</div>

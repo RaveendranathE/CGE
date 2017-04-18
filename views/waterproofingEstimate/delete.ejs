@@ -1,0 +1,25 @@
+
+
+<br/>
+<br/>
+<h2>Confirm deletion of estimate</h2>
+<br/>
+<br/> ID:
+<%=  estimate._id %><br>
+	<% include ../estimateparts/est-about %>
+		<% include ../estimateparts/est-footage %>			
+					<% include ../estimateparts/est-waterproofing %>
+						<% include ../estimateparts/est-aggregate %>
+							<% include ../estimateparts/est-labor %>
+								<% include ../estimateparts/est-mileage %>
+									<% include ../estimateparts/est-misc %>
+										<% include ../estimateparts/est-result %><br/>
+
+											<form method="get" action="/waterproofingEstimate">
+												<input type="submit" value="Return to list" class="btn btn-caution" />
+											</form>
+
+											<br/>
+											<form method="POST" action="/waterproofingEstimate/delete/<%= estimate._id %>">
+												<input type="submit" value="Delete this item" class="btn btn-danger pull-right" />
+											</form>

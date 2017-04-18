@@ -1,0 +1,58 @@
+# P2-8
+# ShivaTeja Miyapuram, Manohar Sriram
+---
+  
+- name: 70714/70715 - epoxy
+  _id: 1
+  coatingType: Epoxy
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 10
+  price: 56.30
+
+- name: 70714/70715 - 09 general purpose urethane
+  _id: 2
+  coatingType: Urethane
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 20
+  price: 50.38
+
+- name: 70734/70735 - floor brite epoxy
+  _id: 3
+  coatingType: Expoxy
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 30
+  price: 77.45
+
+- name: 70805/7952 - chem resistant urethane
+  _id: 4
+  coatingType: Urethane
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 40
+  price: 72.67
+
+- name: 70815/70816 - urethane Hi-solids
+  _id: 5
+  coatingType: Urethane
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 50
+  price: 113.15
+
+- name: 70714/70715-01 fast cure epoxy
+  _id: 6
+  coatingType: Epoxy
+  defaultCoverageSqFt: 100
+  unit: gal
+  displayorder: 60
+  price: 66.40
+
+#70714/70715 - epoxy                                   $56.30/gal
+#70714/70715=09 general purpose urethane    $50.38/gal  
+#70734/70735 - floor brite epoxy                     $77.45/gal
+#70805/7952 - chem resistant urethane           $72.67/gal
+#70815/70816 - urethane Hi-solids                  $113.15/gal
+#70714/70715-01 fast cure epoxy                   $66.40/gal

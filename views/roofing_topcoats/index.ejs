@@ -1,0 +1,61 @@
+<!--
+DevTeam ID (P3-8)
+Dev1 : Swaroop Gembali [S528802]
+Dev2 : Tarun Kumar Potlapalli [S528757]-->
+<% console.log(roofingTopcoats.query); %>
+  <div class="container">
+    <h2>Roofing Topcoats</h2>
+
+    <p>There are
+      <%= roofingTopcoats.query.length %> roofing topcoats. <br/>
+        <a href="roofingTopcoat/create"><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Add a new one</button></a></p>
+
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Display Order</th>
+          <th>Price</th>
+          <th>Unit</th>
+          <th>Status</th>
+          <th>Actions</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% count=0; %>
+          <% for (var i = 0; i < roofingTopcoats.query.length; i++) { %>
+            <tr>
+              <% count++; %>
+                <td>
+                  <%=  roofingTopcoats.query[i]._id %>
+                </td>
+                <td>
+                  <%=  roofingTopcoats.query[i].name %>
+                </td>
+                <td>
+                  <%=  roofingTopcoats.query[i].displayorder %>
+                </td>
+                <td>
+                  <%=  roofingTopcoats.query[i].price %>
+                </td>
+                <td>
+                  <%=  roofingTopcoats.query[i].unit %>
+                </td>
+                <td id="stat"><%=  roofingTopcoats.query[i].isactive?"Active":"Inactive" %></td>
+                <td>
+                  <a href="roofingTopcoat/active/<%=  count%>/<%=  roofingTopcoats.query[i].isactive?'false':'true' %>">	<button type="button" class="btn <%=  roofingTopcoats.query[i].isactive?'btn-danger':'btn-success' %>"> <%=  roofingTopcoats.query[i].isactive?"Deactivate":"Activate" %></button></a>
+                 
+                  <a href="roofingTopcoat/details/<%=  count%>"> <button type="button" class="btn btn-info">   Details </button></a>
+                  <a href="roofingTopcoat/edit/<%=  count%>"> <button type="button" class="btn btn-warning"> Edit </button></a>
+                   <a href="roofingTopcoat/delete/<%=  count%>"> <button type="button" class="btn btn-danger"> Delete </button></a>
+                </td>
+            </tr>
+            <% } %>
+      </tbody>
+    </table>
+  </div>
+
+
+ 

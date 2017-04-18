@@ -1,0 +1,28 @@
+<!-- P3-3 Devin Miller & Unnathi VallapuReddy -->
+<hr>
+<h2>Labor Costs</h2>
+<hr>
+<div id="laborCosts">
+<% for(var i=0; i<estimate.laborEntries.length; i++) { e = estimate.laborEntries[i];  %>
+   <% include fg-labor-entry.ejs %>
+<% } %>
+</div>
+<input type = "button" class = "btn btn-primary" value="Add Labor" onclick="addLabor()">
+<br/>
+
+<script> 
+var count = 0;
+addLabor = function(){
+
+    var largeHTMLBlock = '<div class="col-xs-2" id = "'+count+'"><div class="form-group"><label for="description">Description</label><input type="text" class="form-control" id="description" name="description" value="" placeholder="Job Fam" required></div></div><div class="col-xs-2"><div class="form-group"><label for="count">Count</label><input type="number" class="form-control" id="count" name="count" value="2" min=0 max=10 value=2 required></div></div><div class="col-xs-2"><div class="form-group"><label for="hoursPerPerson">Hrs/Ppl</label><input type="number" class="form-control" id="hoursPerPerson" name="hoursPerPerson" value="16" min=0 max=1000 value=16 required></div></div><div class="col-xs-2"><div class="form-group"><label for="dollarsPerHour">$/hr</label><input type="number" class="form-control" id="dollarsPerHour" name="dollarsPerHour" value="15" min=0.00 max=100.00 value=15.0 required></div></div><div class="col-xs-1"><div class="form-group"><label for="nightsPerPerson">nights</label><input type="number" class="form-control" id="nightsPerPerson" name="nightsPerPerson" value="2" min=0 max=100 value=2 required></div></div><div class="col-xs-2"><div class="form-group"><label for="roomCost">$/rm</label><input type="number" class="form-control" id="roomCost" name="roomCost" value="80" min=0 max=200 value=80 required></div></div><div class="col-xs-1"><div class="form-group"><i class="fa fa-trash deleteLabor" id="delete'+count+'" caria-hidden="true"></i></div></div>'
+    $("#laborCosts").append(largeHTMLBlock);
+    count++;
+}
+
+$(document).ready(function(){
+$(".deleteLabor").click(function(){
+    $(this.id).hide;
+    console.log("called");
+});
+});
+</script>

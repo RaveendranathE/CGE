@@ -1,0 +1,18 @@
+<!-- P2-5 Raghavender Jarupati & Kavya Sri Margam --> 
+<br/>
+UsesUrethane: <%=  estimate.flooring.usesUrethane ? 'true' : 'false' %><br/>
+UethaneProductSelection:	<%=  estimate.flooring.urethaneProductSelection %><br/>
+UrethaneCoverageSqFt:	<%=  estimate.flooring.urethaneCoverageSqFt %><br/>
+ <% 
+ var price=0; 
+ var cost=0;
+ for (var i = 0; i < flooringCoatings.query.length; i++) { 
+   if (flooringCoatings.query[i]._id == estimate.flooring.urethaneProductSelection){ 
+      price = flooringCoatings.query[i].price;
+      cost = ((estimate.flooring.usesUrethane ? 1 : 0) * price / estimate.flooring.urethaneCoverageSqFt).toFixed(2);
+   }
+ }
+%>
+Urethane price ($/unit): $<%= price %><br/>
+Urethane cost ($/squarefootage): $<%= cost %><br/>
+</br>

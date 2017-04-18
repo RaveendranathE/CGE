@@ -1,0 +1,46 @@
+<!-- P2-8
+ ShivaTeja Miyapuram, Manohar Sriram -->
+<% console.log(flooringCoatings.query); %>
+	<div class="container">
+		<h2>Flooring coatings</h2>
+		<p>There are
+			<%= flooringCoatings.query.length %> flooring coatings. <br/>
+				<a href="flooringCoating/create"class="btn btn-info" role="button">Add a new one.</a></p>
+		<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					<th>Price</th>
+					<th>Unit</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (var i = 0; i < flooringCoatings.query.length; i++) { %>
+					<tr>
+						<td>
+							<%=  flooringCoatings.query[i]._id %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].name %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].displayorder %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].price %>
+						</td>
+						<td>
+							<%=  flooringCoatings.query[i].unit %>
+						</td>
+						<td>
+							<a href="flooringCoating/delete/<%=  flooringCoatings.query[i]._id %>" class="btn btn-danger" role="button"> Delete </a> 
+							<a href="flooringCoating/details/<%= flooringCoatings.query[i]._id %>" class="btn btn-info" role="button"> Details </a> 
+							<a href="flooringCoating/edit/<%=    flooringCoatings.query[i]._id %>" class="btn btn-warning" role="button"> Edit </a></td>
+					</tr>
+					<% } %>
+			</tbody>
+		</table>
+	</div>

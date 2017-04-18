@@ -1,0 +1,41 @@
+<!--P3-1 Dominic & Michael-->
+<hr>
+<h2>Roofing Materials</h2>
+<hr>
+<div class="form-group">
+  <label for="roofType">Roof Type</label>
+  <div class="funkyradio">
+    <div class="funkyradio-primary">
+      <input type="checkbox" name="Metal" id="Metal" <%= (estimate.roofing.roofType =='Metal') ? 'checked' : ' ' %> />
+      <label for="Metal">Metal</label>
+    </div>
+    <div class="funkyradio-success">
+      <input type="checkbox" name="Mod Bit" id="Mod Bit" <%= (estimate.roofing.roofType =='Mod Bit') ? 'checked' : ' ' %> />
+      <label for="Mod Bit">Mod Bit</label>
+    </div>
+    <div class="funkyradio-warning">
+      <input type="checkbox" name="Single Ply" id="Single Ply" <%= (estimate.roofing.roofType =='Single Ply') ? 'checked' : ' ' %> />
+      <label for="Single Ply">Single Ply</label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="processType">Process Type</label>
+  <div class="funkyradio">
+    <div class="funkyradio-primary">
+      <input type="checkbox" name="Roof Coatings" id="Roof Coatings" <%= (estimate.roofing.processType =='Roof Coatings') ? 'checked' : ' ' %> />
+      <label for="Roof Coatings">Roof Coatings</label>
+    </div>
+    <div class="funkyradio-success">
+      <input type="checkbox" name="Polyurethane Foam and Coatings" id="Polyurethane Foam and Coatings" <%= (estimate.roofing.processType =='Polyurethane Foam and Coatings') ? 'checked' : ' ' %> />
+      <label for="Polyurethane Foam and Coatings">Polyurethane Foam and Coatings</label>
+    </div>
+  </div>
+</div>
+
+
+  <% include ../estimateparts/fg-roofing1 %>
+  <% include ../estimateparts/fg-roofing2 %>
+  <% include ../estimateparts/fg-roofing3 %>
+  <% include ../estimateparts/fg-roofing4 %>

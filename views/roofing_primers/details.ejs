@@ -1,0 +1,43 @@
+<!--Dev Team P3-6
+Neeraja Garigipati s528801
+Vaishnavi Kalvakota s528803
+-->
+<br/>
+<br/>
+<h2>Roofing primer details</h2>
+<br/>
+<br/>
+<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+<tr>
+<td>
+<p>Item
+	<%=  roofingPrimer._id %>
+</p>
+</td>
+<td>
+<p>
+	<%=  roofingPrimer.name %>
+</p>
+</td>
+<td>
+<p>
+	<%=  roofingPrimer.price %> per
+		<%=  roofingPrimer.unit %>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<form method="get" action="/roofingPrimer">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

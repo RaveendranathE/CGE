@@ -1,0 +1,31 @@
+
+ Responsiblity for Models
+
+================================
+Section 02
+================================
+flooringEstimate.js
+flooringCoating.js
+================================
+Section 03
+================================
+roofingBasecoat.js
+roofingCoating.js
+roofingEstimate.js
+roofingPrimer.js
+roofingTopcoat.js
+user.js
+================================
+Section 04
+================================
+aggregateMaterial.js
+mileageRate.js
+waterproofingBasecoat.js
+waterproofingEstimate.js
+waterproofingPrimer.js
+waterproofingTopcoat.js
+================================
+
+
+
+

@@ -1,0 +1,42 @@
+<!-- P2-8
+ ShivaTeja Miyapuram, Manohar Sriram -->
+<br/>
+<br/>
+<h2>Details for flooring coating</h2>
+<br/>
+<br/>
+
+<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Price per Gallon</th>
+					
+				</tr>
+			</thead>
+ <tbody>	
+	<tr>
+		<td>
+			<p>
+				Item <%=  flooringCoating._id %>
+			</p>
+		</td>
+		<td>
+			<p>
+				Name <%=  flooringCoating.name %>
+			</p>
+		</td>		
+		<td>
+			<p>
+				<%=  flooringCoating.price %> per
+					<%=  flooringCoating.unit %>
+			</p>
+		</td>	
+	</tr>	
+	</tbody>
+</table>	
+<br/>
+<form method="get" action="/flooringCoating">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

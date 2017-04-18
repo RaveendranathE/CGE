@@ -1,0 +1,18 @@
+<!-- P2-4 Prathibha Kamani & Raveendranath Eluri --> 
+UsesEpoxy:	<%=  estimate.flooring.usesEpoxy ? 'true' : 'false' %><br/>
+EpoxyProductSelection:	<%=  estimate.flooring.epoxyProductSelection %><br/>
+EpoxyCoverageSqFt:	<%=  estimate.flooring.epoxyCoverageSqFt %><br/>
+ <% 
+ var price=0; 
+ var cost=0;
+ for (var i = 0; i < flooringCoatings.query.length; i++) { 
+   if (flooringCoatings.query[i]._id == estimate.flooring.epoxyProductSelection){ 
+      price = flooringCoatings.query[i].price;
+      cost = ((estimate.flooring.usesEpoxy ? 1 : 0) * price / estimate.flooring.epoxyCoverageSqFt).toFixed(2);
+   }
+ }
+%>
+Epoxy price ($/unit): $<%= price %><br/>
+Epoxy cost ($/squarefootage): $<%= cost %><br/>
+</br>
+

@@ -1,0 +1,115 @@
+<!-- P4-5 
+Saidevi Uppalapati , Raviteja Chintala -->
+
+
+<% 
+var totalsqft = 0; 
+for (var i = 0; i < estimate.areas.length; i++) { 
+  e =estimate.areas[i];        
+  totalsqft += e.lengthFeet * e.widthFeet;  
+} 
+
+let materialCost = 0;
+if (estimate.type == 'Flooring'){
+  let uprice =0;
+  const udata = flooringCoatings.query; 
+  for( let i=0; i<udata.length; i++){ 
+      if (udata[i]._id == estimate.flooring.urethaneProductSelection){
+          uprice = udata[i].price;
+      }
+  }
+  const ucost = estimate.flooring.usesUrethane ? (totalsqft  / estimate.flooring.urethaneCoverageSqFt * uprice) : 0;
+  let eprice =0;
+  const edata = flooringCoatings.query; 
+  for( let i=0; i<edata.length; i++){ 
+      if (edata[i]._id == estimate.flooring.epoxyProductSelection){
+          eprice = edata[i].price;
+      }
+  }
+  const ecost = estimate.flooring.usesEpoxy ? (totalsqft  / estimate.flooring.epoxyCoverageSqFt * eprice) : 0;
+  materialCost = ucost + ecost;
+}
+
+var agdata = aggregateMaterials.query; 
+for( let i=0; i<agdata.length; i++){ 
+    if (agdata[i]._id == estimate.aggregate.aggregateMaterialSelection){
+         price = agdata[i].price;
+    }
+}
+const aggregateCost = estimate.aggregate.isUsed ? totalsqft  / estimate.aggregate.coverageSqFt * price : 0;
+
+var laborCost = 0;
+for (let i = 0; i < estimate.laborEntries.length; i++) { 
+  e =estimate.laborEntries[i]; 
+  laborCost += e.count * e.hoursPerPerson* e.dollarsPerHour + (e.count*e.nightsPerPerson*e.roomCost);
+}   
+
+var mileageCost = 0;
+for (let i = 0; i < estimate.mileageEntries.length; i++) { 
+  e =estimate.mileageEntries[i]; 
+  mileageCost += (e.numberOfVehicles * e.milesPerDrive * e.dollarsPerMile); 
+}       
+
+var miscCost = 0;
+for (let i = 0; i < estimate.miscellaneousEntries.length; i++) { 
+  e=estimate.miscellaneousEntries[i]; 
+  miscCost+=e.cost;
+}
+const totalCost=   (materialCost + aggregateCost + laborCost + mileageCost + miscCost)/totalsqft;
+const totalBid= totalCost*(1.0 + estimate.margin);
+%>
+  <table class="table">
+    <tr>
+      <th colspan="2">Summary</th>
+    </tr>
+    <tr>
+      <td>Total area in sqft</td>
+      <td>
+        <%=totalsqft %>
+      </td>
+    </tr>
+    <tr>
+      <td>Job-specific materials ($/sqft) </td>
+      <td>$
+        <%= (materialCost/totalsqft).toFixed(2) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Aggregate ($/sqft)</td>
+      <td>$
+        <%= (aggregateCost/totalsqft).toFixed(2) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Labor ($/sqft) </td>
+      <td>$
+        <%= (laborCost/totalsqft).toFixed(2) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Mileage ($/sqft)</td>
+      <td>$
+        <%= (mileageCost/totalsqft).toFixed(2) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Miscellaneous ($/sqft) </td>
+      <td>$
+        <%= (miscCost/totalsqft).toFixed(2) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Total cost ($/sqft) </td>
+      <td>$
+        <%= totalCost.toFixed(2) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Bid price @
+        <%= estimate.margin*100 %> ($/sqft)</td>
+      <td>$
+        <%= totalBid.toFixed(2) %>
+      </td>
+    </tr>
+  </table>
+  </br>

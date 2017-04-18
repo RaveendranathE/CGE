@@ -1,0 +1,45 @@
+<!--
+DevTeam ID (P3-8)
+Dev1 : Swaroop Gembali [S528802]
+Dev2 : Tarun Kumar Potlapalli [S528757]-->
+<br/>
+<br/>
+<h2>Roofing Topcoat Details</h2>
+<br/>
+<br/> 
+
+<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+
+<tr>
+<td>
+<p>Item
+	<%=  roofingTopcoat._id %>
+</p>
+</td>
+<td>
+<p>
+	<%=  roofingTopcoat.name %>
+</p>
+</td>
+<td>
+<p>
+	<%=  roofingTopcoat.price %> per
+		<%=  roofingTopcoat.unit %>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<form method="get" action="/roofingTopcoat">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>

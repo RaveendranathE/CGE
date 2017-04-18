@@ -1,0 +1,27 @@
+<br/>
+<br/>
+<h2>Edit estimate </h2>
+<div class="content">
+	<form method="POST" action="/estimate/save/<%= estimate._id %>">
+		<div class="form-group" id=frm>
+			<label for="_id">ID</label>
+			<input type="number" class="form-control" id="_id" name="_id" value="<%= estimate._id %>" required disabled>
+		</div>
+		<% include ../estimateparts/fg-about %>
+			<% include ../estimateparts/fg-footage %>
+				<% include ../estimateparts/fg-flooring %>
+					<% include ../estimateparts/fg-roofing %>
+						<% include ../estimateparts/fg-waterproofing %>
+							<% include ../estimateparts/fg-aggregate %>
+								<% include ../estimateparts/fg-labor %>
+									<% include ../estimateparts/fg-mileage %>
+										<% include ../estimateparts/fg-misc %>
+												<% include ../estimateparts/fg-comment %>
+												
+											<input type="submit" value="Save" class="btn btn-primary" />
+	</form>
+	<br/>
+	<form method="get" action="/estimate">
+		<input type="submit" value="Return to list" class="btn btn-caution" />
+	</form>
+</div>

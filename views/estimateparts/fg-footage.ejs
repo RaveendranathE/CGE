@@ -1,0 +1,73 @@
+<hr>
+<h2>Square Footage</h2>
+<hr>
+<div id="sqrFootage">
+  <div id = squareFootageParent>
+<% for(var i=0; i<estimate.areas.length; i++) { e = estimate.areas[i];  %>
+   <% include fg-footage-entry.ejs %>
+   <%if(i === estimate.areas.length - 1){%>
+     <div id = numberOfFields><%=i%></div>
+    <%}%>
+<% } %>
+<!-- Initialization of page from previous data has been done-->
+</div>
+</div>
+<div>
+  <input type="button" class="btn btn-primary" value="Add Area" onclick="addSFootage()"/>
+  <br/>
+</div>
+<script> removeSFootage  = function(fieldToRemove){
+  document.getElementById(fieldToRemove).remove();
+}
+</script>
+
+<script> addSFootage = function(){
+  var childDiv = document.createElement("div");
+  childDiv.innerHTML = document.getElementById("blankChild").innerHTML;
+  var previousValue = parseInt(document.getElementById("numberOfFields").innerHTML);
+  var nextValue = previousValue + 1;
+  document.getElementById("numberOfFields").innerHTML = nextValue;
+  childDiv.id = "Area" + nextValue;
+  document.getElementById("squareFootageParent").appendChild(childDiv);
+  document.getElementById("deleteButton").id = "deleteButton" + nextValue;
+  document.getElementById("deleteButton" + nextValue).setAttribute("value","Area" + nextValue);
+}
+</script>
+
+<div id = blankChild>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description" value="0" placeholder="Description" required>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="lengthFeet">Length (ft)</label>
+      <input type="number" class="form-control" id="lengthFeet" name="lengthFeet" value="0" min=0 max=50000 required>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label for="widthFeet">Width (ft)</label>
+      <input type="number" class="form-control" id="widthFeet" name="widthFeet" value="0" min=0 max=50000 required>
+    </div>
+  </div>
+  <div class="col-xs-3">
+    <div class="form-group">
+    <label for="buttons">Options</label>
+      <div >
+        <button id="deleteButton" class="btn btn-danger" onclick="removeSFootage(this.value)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+#blankChild {visibility:hidden;}
+#numberOfFields {visibility:hidden; height:0px;}
+</style>
+
+<!-- P2-1 David Bruce, Cassandra Baldus -->

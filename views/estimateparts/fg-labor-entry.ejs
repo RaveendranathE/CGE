@@ -1,0 +1,45 @@
+<!-- P3-3 Devin Miller & Unnathi VallapuReddy -->
+<link rel= "stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class = "row">
+<div class="col-xs-2">
+  <div class="form-group">
+    <label for="description">Descr</label>
+    <input type="text" class="form-control" id="description" name="labourdescription" value="<%= e.description %>" placeholder="Job Fam" required>
+  </div>
+</div>
+<div class="col-xs-2">
+  <div class="form-group">
+    <label for="count">Count</label>
+    <input type="number" class="form-control" id="count" name="count" value="<%= e.count %>" min=0 max=10 value=2 required>
+  </div>
+</div>
+<div class="col-xs-2">
+  <div class="form-group">
+    <label for="hoursPerPerson">Hrs/Ppl</label>
+    <input type="number" class="form-control" id="hoursPerPerson" name="hoursPerPerson" value="<%= e.hoursPerPerson %>" min=0 max=1000 value=16 required>
+  </div>
+</div>
+<div class="col-xs-2">
+  <div class="form-group">
+    <label for="dollarsPerHour">$/hr</label>
+    <input type="number" class="form-control" id="dollarsPerHour" name="dollarsPerHour" value="<%= e.dollarsPerHour %>" min=0.00 max=100.00 value=15.0 required>
+  </div>
+</div>
+<div class="col-xs-1">
+  <div class="form-group">
+    <label for="nightsPerPerson">nights</label>
+    <input type="number" class="form-control" id="nightsPerPerson" name="nightsPerPerson" value="<%= e.nightsPerPerson %>" min=0 max=100 value=2 required>
+  </div>
+</div>
+<div class="col-xs-2">
+  <div class="form-group">
+    <label for="roomCost">$/rm</label>
+    <input type="number" class="form-control" id="roomCost" name="roomCost" value="<%= e.roomCost %>" min=0 max=200 value=80 required>
+  </div>
+</div>
+<div class="col-xs-1">
+  <div class="form-group">
+    <i class="fa fa-trash" aria-hidden="true"></i>
+  </div>
+</div>
+</div>

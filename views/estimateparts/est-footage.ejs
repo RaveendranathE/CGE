@@ -1,0 +1,32 @@
+<h3>Area</h3>
+<table class="table" border="1">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Length</th>
+      <th>Width</th>
+      <th>Sqft</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var total = 0; 
+    for (var i = 0; i < estimate.areas.length; i++) { e =estimate.areas[i]; %>
+      <tr>
+        <td>
+          <%=  e.description %>
+        </td>
+        <td>
+          <%=  e.lengthFeet %>
+        </td>
+        <td>
+          <%=  e.widthFeet %>
+        </td>
+        <td>
+          <%=  e.lengthFeet * e.widthFeet %>
+        </td>
+      </tr>
+      <% total += e.lengthFeet * e.widthFeet; %>
+        <% } %>
+  </tbody>
+</table>
+<h4 id="sqft" name="sqft"><%=total%></h4><br/>

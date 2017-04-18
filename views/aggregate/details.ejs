@@ -1,0 +1,42 @@
+<!-- P3-9
+ Sandeep Mulakala, David Schmitt -->
+<br/>
+<br/>
+<h2>Details for Aggragate Materials</h2>
+<br/>
+<br/>
+<table class="table" border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Display Order</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			
+<tr>
+<td>
+<p>Item
+	<%= aggregateMaterial._id %>
+</p>
+</td>
+<td>
+<p>
+	<%=  aggregateMaterial.name %>
+</p>
+</td>
+<td>
+<p>
+	<%=  aggregateMaterial.price %> per
+		<%=  aggregateMaterial.unit %>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<form method="get" action="/aggregate">
+	<input type="submit" value="Return to list" class="btn btn-caution" />
+</form>
